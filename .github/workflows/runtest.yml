@@ -8,8 +8,11 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: ./.github/actions/my-test-runner
+      - name: Checkout the repo
+        uses: actions/checkout@v4  
+
+      - name: Run custom composite action
+        uses: ./.github/actions/my-test-runner 
         with:
           python-version: "3.11"
