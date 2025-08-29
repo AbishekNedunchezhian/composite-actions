@@ -17,6 +17,5 @@ runs:
       with:
         python-version: ${{ inputs.python-version }}
 
-    - name: Install dependencies
-      run: pip install -r requirements.txt
-      shell: bash
+      - name: Run hello script
+        run: echo "Hello, World!"
