@@ -1,0 +1,15 @@
+name: Run with Composite Action
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: ./.github/actions/my-test-runner
+        with:
+          python-version: "3.11"
