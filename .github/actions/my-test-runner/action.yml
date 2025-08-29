@@ -1,21 +1,8 @@
 name: "My Test Runner"
-description: "Sets up Python and installs dependencies"
-
-inputs:
-  python-version:
-    description: "Python version to use"
-    required: true
+description: "A simple composite action that prints Hello World"
 
 runs:
   using: "composite"
   steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
-
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: ${{ inputs.python-version }}
-
-      - name: Run hello script
-        run: echo "Hello, World!"
+    - name: Say Hello
+      run: echo "Hello World from composite action!"
