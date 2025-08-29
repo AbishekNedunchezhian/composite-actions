@@ -1,18 +1,13 @@
-name: Run with Composite Action
+name: Test Composite Action
 
-on:
-  push:
-    branches:
-      - main
+on: [push]
 
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout the repo
-        uses: actions/checkout@v4  
+      - name: Checkout repo
+        uses: actions/checkout@v4
 
-      - name: Run custom composite action
-        uses: ./.github/actions/my-test-runner 
-        with:
-          python-version: "3.11"
+      - name: Run my composite action
+        uses: ./.github/actions/my-test-runner
